@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@import "tailwindcss/preflight";
+@tailwind utilities;
+
+
+nav a {
+  text-shadow: 2px 0 #333, -2px 0 #333, 0 2px #333, 0 -2px #333, 1px 1px #333,
+    -1px -1px #333, 1px -1px #333, -1px 1px rgb(133, 133, 133);
+}
+
+/* Globalne klasy dla spójnych stylów */
+.main-content-container {
+  @apply max-w-[1200px] mx-auto;
+}
+
+.subpage-header-container {
+  @apply bg-[linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('https://via.placeholder.com/1200x200?text=Twoj+warsztat')] bg-no-repeat bg-center bg-cover text-white text-center p-[3em_1em] rounded-[10px] mb-[2em] flex justify-center items-center;
+}
+
+.page-section {
+  @apply mt-[200px] bg-[#222] p-[3em] rounded-[10px] shadow-[0_4px_10px_rgba(0,0,0,0.3)] mb-[2em] text-center;
+}
+
+.section-title {
+  @apply text-center text-[#c9302c] text-[2.2em] font-bold inline-block border-b-[3px] border-[#c9302c] pb-[0.5em] mx-auto mb-[1.5em];
+}
+
+.service-card-h3 {
+  @apply text-[#c9302c] border-b-[2px] border-[#c9302c] pb-[0.5em] text-center font-bold;
+}
+
+.service-details-grid {
+  @apply flex justify-around gap-[2em] mt-[2em] flex-wrap;
+}
+
+.service-card {
+  @apply bg-[#3e3e3e] border border-[#333] text-white rounded-[8px] p-[1.5em] flex-1 min-w-[250px];
+}
+
+.service-list-item {
+  @apply bg-[url('https://img.icons8.com/material-rounded/24/c9302c/checkmark--v1.png')] bg-no-repeat bg-[left_center] bg-[20px] pl-[30px] mb-[10px];
+}
+
+.call-to-action-btn {
+  @apply inline-block bg-[#c9302c] text-white py-[1em] px-[2em] no-underline rounded-[5px] transition-colors duration-300 hover:bg-[#a52623] mt-[1em] uppercase font-bold;
+}
