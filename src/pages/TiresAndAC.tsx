@@ -1,8 +1,11 @@
-// src/pages/TiresAndAC.tsx
+
 import React from "react";
 import tiresAndAC from "../assets/wheel.webp";
+import { useContact } from '../context/ContactContext'; 
 
 const TiresAndAC: React.FC = () => {
+  const { telefon, telefonUrl, adres, adresUrl,} = useContact();
+
   return (
     <div
       className="relative min-h-screen flex flex-col items-center justify-center p-4 sm:p-8"
@@ -28,7 +31,7 @@ const TiresAndAC: React.FC = () => {
             Wulkanizacja i Klimatyzacja
           </h1>
           <p className="text-lg sm:text-xl text-[#eee] max-w-2xl mx-auto">
-            Dbamy o Twoje **bezpieczeństwo na drodze** oraz o **komfort jazdy**.
+            Dbamy o Twoje bezpieczeństwo na drodze oraz o komfort jazdy.
             Nasze usługi wulkanizacji i serwis klimatyzacji to gwarancja, że
             Twój pojazd jest zawsze w najlepszej kondycji, niezależnie od pory
             roku.
@@ -41,16 +44,13 @@ const TiresAndAC: React.FC = () => {
               <h3 className="text-white text-2xl font-semibold mb-4 border-b border-[#555] pb-2">
                 Wulkanizacja
               </h3>
-              <ul className="list-disc list-inside text-[#bbb] space-y-2">
+              <ul className="list-none list-inside text-[#bbb] space-y-2"> 
                 <li className="service-list-item">
-                  Szybka i precyzyjna **wymiana i wyważanie kół**
+                  Szybka i precyzyjna wymiana i wyważanie kół
                 </li>
                 <li className="service-list-item">
                   Sprzedaż opon nowych i używanych, dopasowanych do Twoich
                   potrzeb
-                </li>
-                <li className="service-list-item">
-                  Wygodna **przechowalnia opon**
                 </li>
                 <li className="service-list-item">
                   Profesjonalna naprawa uszkodzonych opon
@@ -61,12 +61,12 @@ const TiresAndAC: React.FC = () => {
               <h3 className="text-white text-2xl font-semibold mb-4 border-b border-[#555] pb-2">
                 Klimatyzacja
               </h3>
-              <ul className="list-disc list-inside text-[#bbb] space-y-2">
+              <ul className="list-none list-inside text-[#bbb] space-y-2"> 
                 <li className="service-list-item">
-                  Kompleksowy serwis i **napełnianie układów klimatyzacji**
+                  Kompleksowy serwis i napełnianie układów klimatyzacji
                 </li>
                 <li className="service-list-item">
-                  Dokładne **odgrzybianie i dezynfekcja** dla zdrowego powietrza
+                  Dokładne odgrzybianie i dezynfekcja dla zdrowego powietrza
                 </li>
                 <li className="service-list-item">
                   Naprawa i wymiana przewodów oraz kompresorów
@@ -74,12 +74,7 @@ const TiresAndAC: React.FC = () => {
               </ul>
             </article>
           </div>
-          <a
-            href="#contact"
-            className="block w-full text-center bg-[#ff6347] hover:bg-[#e6503c] text-white font-bold py-4 px-6 rounded-full text-xl transition-colors duration-300 ease-in-out mt-8"
-          >
-            Umów się na wizytę
-          </a>
+        
         </section>
 
         <section
@@ -94,13 +89,12 @@ const TiresAndAC: React.FC = () => {
           </p>
           <p className="mb-2 text-xl font-bold">
             <span className="text-[#ff6347]">Telefon:</span>{" "}
-            <a href="tel:123456789" className="text-white hover:underline">
-              123-456-789
+            <a href={telefonUrl} className="text-white hover:underline">
+              {telefon}
             </a>
           </p>
           <p className="text-lg">
-            <span className="text-[#ff6347]">Adres:</span> ul. Przykładowa 10,
-            00-001 Miasto
+            <span className="text-[#ff6347]">Adres:</span> <a href={adresUrl} target="_blank" rel="noopener noreferrer">{adres}</a>
           </p>
         </section>
       </main>
